@@ -1,0 +1,1 @@
+This project aims to emulate the bash terminal functionality through python
