@@ -21,3 +21,8 @@ while terminal_active == True:
         else:
             if os.mkdir(x.split(" ")[1]) == "/":
                 os.mkdir(x.split(" "))
+    elif x.split(" ")[0] == "remove":
+        if len(x.split(" ")) > 2:
+            print("Too many arguments given!")
+        else:
+            os.remove(x.split(" ")[1])
