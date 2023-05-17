@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, update
 from sqlalchemy.orm import sessionmaker
-from db.models import FileSystem
+from db.models import Base, FileSystem
 import os
 
 def terminal():
@@ -21,6 +21,7 @@ def terminal():
 
 def generate_file_system(location, file_name, file_size):
     engine = create_engine('sqlite:///file_system.db')
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 

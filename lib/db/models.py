@@ -17,7 +17,3 @@ class FileSystem(Base):
             file_name: {self.file_name},
             file_size: {self.file_size}
         '''
-
-if __name__ == '__main__':
-    engine = create_engine('sqlite:///file_system.db')
-    Base.metadata.create_all(engine)
