@@ -1,5 +1,6 @@
 import os
 from os import listdir
+import touch
 terminal_active = True
 
 while terminal_active == True:
@@ -25,4 +26,13 @@ while terminal_active == True:
         if len(x.split(" ")) > 2:
             print("Too many arguments given!")
         else:
+            # removes file, ex: remove file_name (no quotes)
             os.remove(x.split(" ")[1])
+    elif x.split(" ")[0] == "touch":
+        if len(x.split(" ")) > 2:
+            print("Too many arguments given!")
+        else: 
+           # creates file within current directory (no quotes)
+           touch.touch(x.split(" ")[1])
+        #    os.utime(x.split(" ")[1])
+            
