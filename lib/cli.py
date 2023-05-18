@@ -7,6 +7,8 @@ import random
 import subprocess
 import time
 from helpers import Colors
+import pyautogui
+import webbrowser
 
 location = None
 file_name = None
@@ -246,3 +248,21 @@ while terminal_active == True:
             time.sleep(0.01)
         print("Done: Base Reality Configured.")
         terminal_active = False
+    elif "open" in x.split(" ")[0]:
+        file_name = x.split(" ")[1]
+        if os.path.isfile("./" + x.split(" ")[1]): 
+            # opens file, no quotes
+            print(f"Searching for '{file_name}' in files...")
+            print(f"Opening '{file_name}'")
+            os.system(f"open {file_name}")
+        else:
+            print(f"File '{file_name}' does not exist. Perhaps this is the file you were looking for?")
+            time.sleep(1.5)
+            webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            time.sleep(5)
+            # moves cursor to center of (my) screen and clicks-- 
+            # may not work on other devices bc of screen sizes 
+            # (pyautogui.size() ==> size of screen)
+            pyautogui.moveTo(700, 450, 2)
+            time.sleep(.05)
+            pyautogui.click()
