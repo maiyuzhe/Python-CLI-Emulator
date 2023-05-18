@@ -4,6 +4,7 @@ from db.models import Base, FileSystem
 import os
 import touch
 import random
+from helpers import Colors
 
 location = None
 file_name = None
@@ -24,10 +25,18 @@ def generate_file_system(location, file_name, file_size, file_type, file_ownersh
     session.add(file_system)
     session.commit()
 
+print(Colors.green, f'''
+ _______ _______  ______ _______ _____ __   _ _______             _______ _______ _     _        _______ _______  _____   ______
+    |    |______ |_____/ |  |  |   |   | \  | |_____| |           |______ |  |  | |     | |      |_____|    |    |     | |_____/
+    |    |______ |    \_ |  |  | __|__ |  \_| |     | |_____      |______ |  |  | |_____| |_____ |     |    |    |_____| |    \_
+                                                                                                                 
+''')
+
 
 terminal_active = True
 
 while terminal_active == True:
+    print(Colors.white, "=========================================================================================================================== [")
     file_ownership=os.getlogin()
     directory = os.getcwd()
     x = input(
