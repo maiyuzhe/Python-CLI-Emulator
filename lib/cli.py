@@ -266,3 +266,11 @@ while terminal_active == True:
             pyautogui.moveTo(700, 450, 2)
             time.sleep(.05)
             pyautogui.click()
+    elif "display" in x.split(" ")[0]:
+        display_input = x.split(" ")[1]
+        if ".gif" in x.split(" ")[1]:
+            print("control + c to exit")
+            os.system(f"viu {display_input}")
+        else: 
+            os.system(f"viu {display_input}")
+
