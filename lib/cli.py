@@ -1,32 +1,34 @@
 from sqlalchemy import create_engine, update
 from sqlalchemy.orm import sessionmaker
 from db.models import Base, FileSystem
-from os import listdir
+import os
 import touch
+import random
+
+location = None
+file_name = None
+file_size = None
+file_type = None
+file_ownership = None
 
 ##Added model generation, will be able to assign file information through this stuff
 
-def generate_file_system(location, file_name, file_size):
+def generate_file_system(location, file_name, file_size, file_type, file_ownership):
     engine = create_engine('sqlite:///file_system.db')
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    file_system=FileSystem(location=location, file_name=file_name, file_size=file_size)
+    file_system=FileSystem(location=location, file_name=file_name, file_size=file_size, file_type=file_type, file_ownership=file_ownership)
 
     session.add(file_system)
     session.commit()
-
-x = input("Enter location, file_name, file_size: ")
-
-
-if __name__ == "__main__":
-    generate_file_system(x.split(" ")[0], x.split(" ")[1], x.split(" ")[2])
 
 
 terminal_active = True
 
 while terminal_active == True:
+    file_ownership=os.getlogin()
     directory = os.getcwd()
     x = input(
         f'[{os.getlogin()}@{os.uname().sysname}-{os.uname().machine}] {directory}$ ')
@@ -55,6 +57,12 @@ while terminal_active == True:
         if len(x.split(" ")) > 2:
             print("Too many arguments given!")
         else: 
+           location = os.getcwd()
+           file_name = x.split(" ")[1].split(".")[0]
+           file_size = random.randint(1, 10000)
+           file_type = x.split(" ")[1].split(".")[1]
            # creates file within current directory (no quotes)
-           touch.touch(x.split(" ")[1])
+        #    touch.touch(x.split(" ")[1])
+           if __name__ == "__main__":
+             generate_file_system(location, file_name, file_size, file_type, file_ownership)
         #    os.utime(x.split(" ")[1])
