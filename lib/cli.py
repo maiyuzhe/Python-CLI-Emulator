@@ -7,10 +7,21 @@ import time
 import random
 import webbrowser
 import pyautogui
+from helpers import Colors
+
+print(Colors.green, f'''
+ _______ _______  ______ _______ _____ __   _ _______             _______ _______ _     _        _______ _______  _____   ______
+    |    |______ |_____/ |  |  |   |   | \  | |_____| |           |______ |  |  | |     | |      |_____|    |    |     | |_____/
+    |    |______ |    \_ |  |  | __|__ |  \_| |     | |_____      |______ |  |  | |_____| |_____ |     |    |    |_____| |    \_
+                                                                                                                 
+''')
+
+
 
 terminal_active = True
 
 while terminal_active == True:
+    print(Colors.white, "=========================================================================================================================== [")
     directory = os.getcwd()
     x = input(
         f'[{os.getlogin()}@{os.uname().sysname}-{os.uname().machine}] {directory} $ ')
@@ -42,7 +53,7 @@ while terminal_active == True:
            # creates file within current directory (no quotes)
            touch.touch(x.split(" ")[1])
     elif x.lower()  == "blue pill":
-        print("Reality is often disapointing. Now, reality can be whatever you want.")
+        print(Colors.green,"Reality is often disapointing. Now, reality can be whatever you want.")
         print("=========================================================================")
         time.sleep(1)
         print("Exiting Reality...")
@@ -64,8 +75,8 @@ while terminal_active == True:
             time.sleep(1.5)
             nums = [1,0]
             tm = 0
-            while tm < 5:
-                print(random.randrange(1,5)* "    ",
+            while tm < 10:
+                print(Colors.green,random.randrange(1,5)* "    ",
                 random.choice(nums),random.randrange(1,5)* " ",
                 random.choice(nums),random.randrange(1,5)* " ",
                 random.choice(nums),random.randrange(1,5)* " ",
@@ -105,7 +116,7 @@ while terminal_active == True:
                 random.choice(nums),random.randrange(1,5)* " ",
                 random.choice(nums),)
                 tm = tm + 0.1
-                time.sleep(0.1)
+                time.sleep(0.01)
             time.sleep(.5)
             print("Simulation Loaded")
             terminal_active = False
@@ -114,8 +125,8 @@ while terminal_active == True:
             os.system('color 0a')
             nums = [1,0]
             tm = 0
-            while tm < 2:
-                print(random.randrange(1,5)* "    ",
+            while tm < 10:
+                print(Colors.green,random.randrange(1,5)* "    ",
                 random.choice(nums),random.randrange(1,5)* " ",
                 random.choice(nums),random.randrange(1,5)* " ",
                 random.choice(nums),random.randrange(1,5)* " ",
@@ -155,11 +166,11 @@ while terminal_active == True:
                 random.choice(nums),random.randrange(1,5)* " ",
                 random.choice(nums),)
                 tm = tm + 0.1
-                time.sleep(0.1)
+                time.sleep(0.01)
                 terminal_active = False
         
     elif x.lower() == "red pill":
-        print("\nBold move, Cotton. Let's see if it pays off.")
+        print(Colors.green,"\nBold move, Cotton. Let's see if it pays off.")
         print("=========================================================================")
         time.sleep(1)
         print("Exiting Simulated Reality...")
@@ -170,12 +181,12 @@ while terminal_active == True:
         time.sleep(1)
         print("Reconfiguring...")
         print("=========================================================================")
-        os.system('color 0a')
-        nums = [1,0,0,1]
+        # os.system('256color 0a')
+        nums = [1,0]
         tm = 0
         time.sleep(1)
-        while tm < 1:
-            print(random.randrange(1,5)* "    ",
+        while tm < 10:
+            print(Colors.green, random.randrange(1,5)* "    ",
             random.choice(nums),random.randrange(1,5)* " ",
             random.choice(nums),random.randrange(1,5)* " ",
             random.choice(nums),random.randrange(1,5)* " ",
@@ -209,7 +220,7 @@ while terminal_active == True:
             random.choice(nums),random.randrange(1,5)* " ",
             random.choice(nums),)
             tm = tm + 0.1
-            time.sleep(0.1)
+            time.sleep(0.01)
         print("Done: Base Reality Configured.")
         terminal_active = False
         
