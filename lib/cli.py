@@ -16,8 +16,6 @@ print(Colors.green, f'''
                                                                                                                  
 ''')
 
-
-
 terminal_active = True
 
 while terminal_active == True:
