@@ -1,10 +1,11 @@
-import urllib.request
 import os
 from os import listdir
+import os.path
 import touch
 import subprocess
 import time
 import random
+import webbrowser
 terminal_active = True
 
 while terminal_active == True:
@@ -56,7 +57,7 @@ while terminal_active == True:
             os.system('color 0a')
             nums = [1,0,0,1]
             tm = 0
-            while tm < 15:
+            while tm < 2:
                 print(random.randrange(1,5)* "    ",
                 random.choice(nums),random.randrange(1,5)* " ",
                 random.choice(nums),random.randrange(1,5)* " ",
@@ -112,12 +113,15 @@ while terminal_active == True:
         print(".")
         terminal_active = False
         # Quits emulated terminal and opens file displaying something indidating that life is shit
-    elif "open" in x.split(" ")[0]:
-        # if inputed file_name does not exist, open rick roll 
-        if "file_name" in x: 
-            pass
-        else:
-            # website = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            #mplayer(str(website))
 
-            urllib.request.urlopen("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    elif "open" in x.split(" ")[0]:
+        file_name = x.split(" ")[1]
+        if os.path.isfile("./" + x.split(" ")[1]): 
+            # opens file, no quotes
+            os.system(f"open {file_name}")
+        else: 
+            print(f"File '{file_name}' does not exist. Perhaps this is the file you were looking for?")
+            webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+ 
+#  thanos_input = subprocess.run(["viu", "Assets/thanos_everything.gif"], timeout=2)
+# "thanos_everything.gif"
