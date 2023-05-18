@@ -193,4 +193,56 @@ while terminal_active == True:
                 tm = tm + 0.1
                 time.sleep(0.01)
                 terminal_active = False
-        
+    elif x.lower() == "red pill":
+        print(Colors.green,"\nBold move, Cotton. Let's see if it pays off.")
+        print("=========================================================================")
+        time.sleep(1)
+        print("Exiting Simulated Reality...")
+        print("=========================================================================")
+        time.sleep(1)
+        print("Done: Simulated Reality Suspended.")
+        print("=========================================================================")
+        time.sleep(1)
+        print("Reconfiguring...")
+        print("=========================================================================")
+        nums = [1,0]
+        tm = 0
+        time.sleep(1)
+        while tm < 10:
+            print(Colors.green, random.randrange(1,5)* "    ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",                
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",                
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",                
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",                
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",                
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",                
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),random.randrange(1,5)* " ",
+            random.choice(nums),)
+            tm = tm + 0.1
+            time.sleep(0.01)
+        print("Done: Base Reality Configured.")
+        terminal_active = False
