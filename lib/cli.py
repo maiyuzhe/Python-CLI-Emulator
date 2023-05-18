@@ -4,6 +4,7 @@ from os import listdir
 import touch
 import subprocess
 import time
+import random
 terminal_active = True
 
 while terminal_active == True:
@@ -45,17 +46,59 @@ while terminal_active == True:
         print("Done: Reality Suspended.")
         print("Simulating.................................")
         # matrix animation
-        print("Done: Reality Simulated.")
+        print("Done: New Reality Simulated.")
         print("What did you lose?")
-        # thanos everything gif 
-        max_time = 10
-        start_time = time.time()  
-        while (time.time() - start_time) < max_time:
-            thanos_input = subprocess.run(["viu", "Assets/thanos_everything.gif"])
-            terminal_active = False
+        try:
+            thanos_input = subprocess.run(["viu", "Assets/thanos_everything.gif"], timeout=2)
             # deletes all files and directories 
-        print("Bury your poor little head in the sand now, my sweet prince.")
-        
+        except: 
+            print("Bury your poor little head in the sand now, my sweet prince.")
+            os.system('color 0a')
+            nums = [1,0,0,1]
+            tm = 0
+            while tm < 15:
+                print(random.randrange(1,5)* "    ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),random.randrange(1,5)* " ",
+                random.choice(nums),)
+                tm = tm + 0.1
+                time.sleep(0.1)
+                terminal_active = False
         
         # Quits emulated terminal and opens file displaying something indidating that life is OK
     elif x.lower() == "red pill":
@@ -74,7 +117,6 @@ while terminal_active == True:
         if "file_name" in x: 
             pass
         else:
-            # Play rick roll in terminal... still trying to figure this one out lol
             # website = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             #mplayer(str(website))
 
