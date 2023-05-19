@@ -31,7 +31,7 @@ def generate_file_system(location, file_name, file_size, file_type, file_ownersh
     session.add(file_system)
     session.commit()
 
-blue_or_red()
+
 print(Colors.green, f'''
 
  _______ _______  ______ _______ _____ __   _ _______             
@@ -46,7 +46,7 @@ print(Colors.green, f'''
 
 ''')
 
-#blue_or_red()
+blue_or_red()
 terminal_active = True
 
 while terminal_active == True:
@@ -124,4 +124,6 @@ while terminal_active == True:
             os.system(f"viu {display_input}")
         else: 
             os.system(f"viu {display_input}")
+    elif x == "clear":
+            os.system('clear')
 

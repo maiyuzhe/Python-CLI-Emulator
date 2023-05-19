@@ -29,15 +29,16 @@ To run this application, please take the following steps:
 6. You are now inside of an emulated terminal (within your own terminal).  Enter commands to try it out (i.e. cd, ls, mkdir, open)
 
 ## Commands
-1. cd 
-2. ls
-3. mkdir
-4. open (no quotes)
+1. cd (change directory)
+2. cd .. (navigate to parent directory)
+3. ls (list files and directories)
+4. mkdir (make new directory)
+5. open (open file -- no quotes)
 ***If entered file is in db, it will open in browser.  If file is within current directory (but not db), it will open the file using your local machines default***
-5. remove (no quotes)
-6. touch 
+6. remove (remove specified directory, no quotes)
+7. touch 
 ***will create a file in a sqlalchemy databse***
-7. diplay (custom feature)
+8. diplay (custom feature)
     ### Display Demo
     ![Demo](Assets/demo.gif)
 
@@ -47,6 +48,7 @@ To run this application, please take the following steps:
     https://github.com/atanunq/viu/blob/master/README.md
     
     ***This is a terminal application that allows for seamless display of images within the terminal. Using your system's built in terminal may cause issues with image rendering.***
+9. clear (clear the terminal)
 
 ## Resources 
 

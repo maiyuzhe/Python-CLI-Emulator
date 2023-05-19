@@ -3,6 +3,7 @@ from time import sleep
 import random
 import subprocess
 import sys
+import os 
 
 class Colors: 
     green = '\033[32m'
@@ -96,6 +97,8 @@ def blue_pill():
     time.sleep(.5)
     try:
         thanos_input = subprocess.run(["viu", "Assets/thanos.gif"], timeout=2)
+        time.sleep(5)
+        os.system('clear')
         print("Simulation Loaded")
         print("=========================================================================")
         print("Bury your poor little head in the sand now, my sweet prince.")
