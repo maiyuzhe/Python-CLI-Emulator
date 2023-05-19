@@ -2,7 +2,6 @@ from sqlalchemy import create_engine, update
 from sqlalchemy.orm import sessionmaker
 from db.models import Base, FileSystem
 import os
-import touch
 import random
 import subprocess
 import time
@@ -74,11 +73,9 @@ while terminal_active == True:
            file_name = x.split(" ")[1].split(".")[0]
            file_size = random.randint(1, 10000)
            file_type = x.split(" ")[1].split(".")[1]
-           # creates file within current directory (no quotes)
-        #    touch.touch(x.split(" ")[1])
+
            if __name__ == "__main__":
              generate_file_system(location, file_name, file_size, file_type, file_ownership)
-        #    os.utime(x.split(" ")[1])
     elif x.lower()  == "blue pill":
         print(Colors.green,"Reality is often disapointing. Now, reality can be whatever you want.")
         print("=========================================================================")
