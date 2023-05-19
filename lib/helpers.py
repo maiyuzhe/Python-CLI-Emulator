@@ -1,10 +1,32 @@
 import time 
+from time import sleep
 import random
 import subprocess
+import sys
 
 class Colors: 
     green = '\033[32m'
     white = '\033[37m'
+
+def load_bar(iteration, total, prefix='', suffix='', decimals=1, length=100, fill='>'):
+    percent = ('{0:.' + str(decimals) + 'f}').format(100 * (iteration/float(total)))
+    filled_length = int(length * iteration // total)
+    bar = fill * filled_length + '-' * (length - filled_length)
+    # print(f'\r{prefix} |{bar}| {percent}% {suffix}', end='')
+    # if iteration == total:
+    #     print()
+    sys.stdout.write(f'\r{prefix} |{bar}| {percent}% {suffix}')
+    sys.stdout.flush()
+    if iteration == total:
+        sys.stdout.write('\n')
+    
+items = list(range(0,50))
+l = len(items)
+
+load = load_bar(0, l, prefix="Generating", suffix="Complete", length=l)
+for i, item in enumerate(items):
+    sleep(0.1)
+    load_bar(i + 1, l, prefix="Generating", suffix="Complete", length=l)
 
 def blue_or_red():
     inp = input("Choose blue pill or red pill: ")
@@ -21,13 +43,17 @@ def blue_pill():
     print("=========================================================================")
     time.sleep(1)
     print("Exiting Reality...")
-    print("=========================================================================")
+    load_bar(0, l, prefix="Generating", suffix="Complete", length=l)
+    for i, item in enumerate(items):
+        sleep(0.1)
+        load_bar(i + 1, l, prefix="Generating", suffix="Complete", length=l)
     time.sleep(1)
     print("Done: Reality Suspended.")
-    print("=========================================================================")
     time.sleep(1)
     print("Reconfiguring...")
-    print("=========================================================================")
+    for i, item in enumerate(items):
+        sleep(0.1)
+        load_bar(i + 1, l, prefix="Generating", suffix="Complete", length=l)
     time.sleep(1.5)
     nums = [1,0]
     tm = 0
@@ -68,13 +94,13 @@ def blue_pill():
         tm = tm + 0.1
         time.sleep(0.01) 
     print("What did you lose?")
-    time.sleep(1)
+    time.sleep(.5)
     try:
         thanos_input = subprocess.run(["viu", "Assets/thanos.gif"], timeout=2)
         print("Simulation Loaded")
         print("=========================================================================")
         print("Bury your poor little head in the sand now, my sweet prince.")
-        print("=========================================================================")
+
     except: 
         while tm < 10:
             print(Colors.green, random.randrange(1,5)* " ",
@@ -118,13 +144,19 @@ def red_pill():
     print("=========================================================================")
     time.sleep(1)
     print("Exiting Simulated Reality...")
-    print("=========================================================================")
+    load_bar(0, l, prefix="Generating", suffix="Complete", length=l)
+    for i, item in enumerate(items):
+        sleep(0.1)
+        load_bar(i + 1, l, prefix="Generating", suffix="Complete", length=l)
     time.sleep(1)
     print("Done: Simulated Reality Suspended.")
     print("=========================================================================")
     time.sleep(1)
     print("Reconfiguring...")
-    print("=========================================================================")
+    load_bar(0, l, prefix="Generating", suffix="Complete", length=l)
+    for i, item in enumerate(items):
+        sleep(0.1)
+        load_bar(i + 1, l, prefix="Generating", suffix="Complete", length=l)
     nums = [1,0]
     tm = 0
     time.sleep(1)
@@ -169,3 +201,5 @@ def red_pill():
     print("=========================================================================")
     print("Bye!")
     exit()
+
+    

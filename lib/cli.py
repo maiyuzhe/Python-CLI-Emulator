@@ -4,7 +4,7 @@ from db.models import Base, FileSystem
 import os
 import random
 import time
-from helpers import Colors, red_pill, blue_or_red
+from helpers import Colors, red_pill, blue_or_red, load
 import pyautogui
 import webbrowser
 
@@ -27,6 +27,7 @@ def generate_file_system(location, file_name, file_size, file_type, file_ownersh
     session.add(file_system)
     session.commit()
 
+load
 print(Colors.green, f'''
 
  _______ _______  ______ _______ _____ __   _ _______             
@@ -45,7 +46,7 @@ blue_or_red()
 terminal_active = True
 
 while terminal_active == True:
-    print(Colors.white, "===========================================================================================================================")
+    print(Colors.white)
     file_ownership=os.getlogin()
     directory = os.getcwd()
     x = input(
