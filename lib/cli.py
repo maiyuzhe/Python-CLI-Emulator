@@ -4,7 +4,7 @@ from db.models import Base, FileSystem
 import os
 import random
 import time
-from helpers import Colors, red_pill, blue_or_red
+from helpers import Colors, blue_pill, red_pill, blue_or_red
 import pyautogui
 import webbrowser
 from pathlib import Path
@@ -73,6 +73,8 @@ while terminal_active == True:
     elif x.split(" ")[0] == "remove":
         if len(x.split(" ")) > 2:
             print("Too many arguments given!")
+        elif os.path.isdir("./" + x.split(" ")[1]) == True:
+            print("Cannot remove directory. Input type must be a file.")
         else:
             # removes file, ex: remove file_name (no quotes)
             os.remove(x.split(" ")[1])
@@ -93,6 +95,8 @@ while terminal_active == True:
             generate_file_system(location, file_name, file_size, file_type, file_ownership)
     elif x.lower() == "red pill":
         red_pill()
+    elif x.lower() == "blue pill":
+        print("You've already taken the blue pill, silly!")
     elif "open" in x.split(" ")[0]:
         file_name = x.split(" ")[1]
         if os.path.isfile("./" + x.split(" ")[1]): 
@@ -104,7 +108,6 @@ while terminal_active == True:
             Base.metadata.create_all(engine)
             Session = sessionmaker(bind=engine)
             session = Session()
-
             print(session.query(FileSystem).filter(FileSystem.file_name==x.split(" ")[1].split(".")[0]).first())
         else:
             print(f"File '{file_name}' does not exist. Perhaps this is the file you were looking for?")
