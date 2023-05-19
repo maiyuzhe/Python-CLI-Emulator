@@ -7,6 +7,7 @@ import time
 from helpers import Colors, red_pill, blue_or_red, load
 import pyautogui
 import webbrowser
+from pathlib import Path
 
 valid_type = ("txt", "exe", "md", "py", "js", "jsx", "db", "json")
 
@@ -85,6 +86,8 @@ while terminal_active == True:
         if len(x.split(" ")) > 2:
             print("Too many arguments given!")
         elif x.split(" ")[1].split(".")[1] in valid_type: 
+           new_file = os.getcwd()+"/"+x.split(" ")[1]
+           Path(new_file).touch()
            location = os.getcwd()
            file_name = x.split(" ")[1].split(".")[0]
            file_size = random.randint(1, 10000)
