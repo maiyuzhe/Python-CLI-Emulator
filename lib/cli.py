@@ -4,7 +4,7 @@ from db.models import Base, FileSystem
 import os
 import random
 import time
-from helpers import Colors, red_pill, blue_or_red, load
+from helpers import Colors, red_pill, blue_or_red, load_bar
 import pyautogui
 import webbrowser
 
@@ -27,7 +27,12 @@ def generate_file_system(location, file_name, file_size, file_type, file_ownersh
     session.add(file_system)
     session.commit()
 
-load
+items = list(range(0,50))
+l = len(items)
+
+for i, item in enumerate(items):
+    time.sleep(0.1)
+    load_bar(i + 1, l, prefix="Generating", suffix="Complete", length=l)
 print(Colors.green, f'''
 
  _______ _______  ______ _______ _____ __   _ _______             
