@@ -85,8 +85,8 @@ while terminal_active == True:
         else:
             print("File type invalid!")
 
-           if __name__ == "__main__":
-             generate_file_system(location, file_name, file_size, file_type, file_ownership)
+        if __name__ == "__main__":
+            generate_file_system(location, file_name, file_size, file_type, file_ownership)
     elif x.lower() == "red pill":
         red_pill()
     elif "open" in x.split(" ")[0]:
@@ -95,10 +95,6 @@ while terminal_active == True:
             # opens file, no quotes
             print(f"Searching for '{file_name}' in files...")
             print(f"Opening '{file_name}'")
-            table = sqlalchemy.connect('./file_system.db')
-            for item in table:
-                if item['file_name'] == x.split(".")[0]:
-                    print(item)
             os.system(f"open {file_name}")
         else:
             print(f"File '{file_name}' does not exist. Perhaps this is the file you were looking for?")
