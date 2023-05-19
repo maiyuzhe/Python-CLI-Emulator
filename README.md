@@ -1,7 +1,7 @@
 # Terminal Emulator
 
 ## Project Description
-This project aims to emulate the bash terminal functionality (and more!) through the use of python's OS module.  
+This project aims to emulate the bash terminal functionality (and more!), primarily through the use of python's OS module.  
 
 ## Installation 
 To run this application, please take the following steps: 

@@ -129,4 +129,3 @@ while terminal_active == True:
             os.system(f"viu {display_input}")
     elif x == "clear":
             os.system('clear')
-
