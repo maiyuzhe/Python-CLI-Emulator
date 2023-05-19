@@ -8,6 +8,8 @@ from helpers import Colors, red_pill, blue_or_red, load
 import pyautogui
 import webbrowser
 
+valid_type = ("txt", "exe", "md", "py", "js", "jsx", "db", "json")
+
 location = None
 file_name = None
 file_size = None
@@ -75,11 +77,13 @@ while terminal_active == True:
     elif x.split(" ")[0] == "touch":
         if len(x.split(" ")) > 2:
             print("Too many arguments given!")
-        else: 
+        elif x.split(" ")[1].split(".")[1] in valid_type: 
            location = os.getcwd()
            file_name = x.split(" ")[1].split(".")[0]
            file_size = random.randint(1, 10000)
            file_type = x.split(" ")[1].split(".")[1]
+        else:
+            print("File type invalid!")
 
            if __name__ == "__main__":
              generate_file_system(location, file_name, file_size, file_type, file_ownership)
@@ -91,6 +95,10 @@ while terminal_active == True:
             # opens file, no quotes
             print(f"Searching for '{file_name}' in files...")
             print(f"Opening '{file_name}'")
+            table = sqlalchemy.connect('./file_system.db')
+            for item in table:
+                if item['file_name'] == x.split(".")[0]:
+                    print(item)
             os.system(f"open {file_name}")
         else:
             print(f"File '{file_name}' does not exist. Perhaps this is the file you were looking for?")
