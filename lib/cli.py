@@ -4,7 +4,7 @@ from db.models import Base, FileSystem
 import os
 import random
 import time
-from helpers import Colors, red_pill, blue_or_red, load
+from helpers import Colors, red_pill, blue_or_red
 import pyautogui
 import webbrowser
 from pathlib import Path
@@ -17,12 +17,6 @@ file_size = None
 file_type = None
 file_ownership = None
 
-engine = create_engine('sqlite:///file_system.db')
-Base.metadata.create_all(engine)
-Session = sessionmaker(bind=engine)
-session = Session()
-
-print(session.query(FileSystem).filter(FileSystem.file_name=="new_file").first())
 
 ##Added model generation, will be able to assign file information through this stuff
 
@@ -37,7 +31,7 @@ def generate_file_system(location, file_name, file_size, file_type, file_ownersh
     session.add(file_system)
     session.commit()
 
-#load
+blue_or_red()
 print(Colors.green, f'''
 
  _______ _______  ______ _______ _____ __   _ _______             

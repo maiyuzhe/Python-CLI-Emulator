@@ -23,7 +23,6 @@ def load_bar(iteration, total, prefix='', suffix='', decimals=1, length=100, fil
 items = list(range(0,50))
 l = len(items)
 
-load = load_bar(0, l, prefix="Generating", suffix="Complete", length=l)
 for i, item in enumerate(items):
     sleep(0.1)
     load_bar(i + 1, l, prefix="Generating", suffix="Complete", length=l)
