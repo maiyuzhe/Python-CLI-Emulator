@@ -8,7 +8,6 @@ from helpers import Colors, red_pill, blue_or_red
 import pyautogui
 import webbrowser
 
-
 location = None
 file_name = None
 file_size = None
@@ -83,7 +82,6 @@ while terminal_active == True:
 
            if __name__ == "__main__":
              generate_file_system(location, file_name, file_size, file_type, file_ownership)
-    
     elif x.lower() == "red pill":
         red_pill()
     elif "open" in x.split(" ")[0]:
