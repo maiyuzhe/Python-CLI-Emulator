@@ -12,7 +12,8 @@ To run this application, please take the following steps:
     ```
     pipenv install 
     pipenv shell 
-    pip install pyautogui 
+    pip install pyautogui
+    brew install viu
     ```
 4. To start the python script: 
     ```
@@ -32,15 +33,18 @@ To run this application, please take the following steps:
 2. ls
 3. mkdir
 4. open (no quotes)
+***If entered file is in db, it will open in browser.  If file is within current directory (but not db), it will open the file using your local machines default***
 5. remove (no quotes)
 6. touch 
+***will create a file in a sqlalchemy databse***
 7. diplay (custom feature)
     ### Display Demo
     ![Demo](Assets/demo.gif)
 
     ### NOTE 
-    ***For optimal usage of the display feature, install iTerm2:*** 
+    ***For optimal usage of the display feature, install iTerm2 and viu:*** 
     https://iterm2.com/downloads.html
+    https://github.com/atanunq/viu/blob/master/README.md
     
     ***This is a terminal application that allows for seamless display of images within the terminal. Using your system's built in terminal may cause issues with image rendering.***
 
@@ -66,6 +70,13 @@ https://pythondex.com/matrix-effect-in-python
 
 ### Terminal 
 https://iterm2.com/documentation.html
+
+### Display
+https://github.com/atanunq/viu/blob/master/README.md
+
+##### **Note:**
+
+***For this project, we used ``` brew install viu ``` as it is running on MacOs. For instillation in other operating systems refer to viu documentation using the link above ^***
 
 ## Contributors
 Dennis Farley | https://github.com/dfarlz97
