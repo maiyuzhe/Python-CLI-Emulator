@@ -16,6 +16,13 @@ file_size = None
 file_type = None
 file_ownership = None
 
+engine = create_engine('sqlite:///file_system.db')
+Base.metadata.create_all(engine)
+Session = sessionmaker(bind=engine)
+session = Session()
+
+print(session.query(FileSystem).filter(FileSystem.file_name=="new_file").first())
+
 ##Added model generation, will be able to assign file information through this stuff
 
 def generate_file_system(location, file_name, file_size, file_type, file_ownership):
@@ -29,7 +36,7 @@ def generate_file_system(location, file_name, file_size, file_type, file_ownersh
     session.add(file_system)
     session.commit()
 
-load
+#load
 print(Colors.green, f'''
 
  _______ _______  ______ _______ _____ __   _ _______             
@@ -44,7 +51,7 @@ print(Colors.green, f'''
 
 ''')
 
-blue_or_red()
+#blue_or_red()
 terminal_active = True
 
 while terminal_active == True:
@@ -96,6 +103,12 @@ while terminal_active == True:
             print(f"Searching for '{file_name}' in files...")
             print(f"Opening '{file_name}'")
             os.system(f"open {file_name}")
+            engine = create_engine('sqlite:///file_system.db')
+            Base.metadata.create_all(engine)
+            Session = sessionmaker(bind=engine)
+            session = Session()
+
+            print(session.query(FileSystem).filter(FileSystem.file_name==x.split(" ")[1].split(".")[0]).first())
         else:
             print(f"File '{file_name}' does not exist. Perhaps this is the file you were looking for?")
             time.sleep(1.5)
