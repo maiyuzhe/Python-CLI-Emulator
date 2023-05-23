@@ -32,12 +32,12 @@ To run this application, please take the following steps:
 1. cd (change directory)
 2. cd .. (navigate to parent directory)
 3. ls (list files and directories)
-4. mkdir (make new directory)
+4. mkdir (create new directory)
 5. open (open file -- no quotes)
 ***If entered file is in db, it will open in browser.  If file is within current directory (but not db), it will open the file using your local machines default***
 6. remove (remove specified directory, no quotes)
 7. touch 
-***will create a file in a sqlalchemy databse***
+***will create a file in a sqlalchemy database***
 8. diplay (custom feature)
     ### Display Demo
     ![Demo](Assets/demo.gif)
